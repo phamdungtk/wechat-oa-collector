@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  # 1. Server lấy bài và tạo RSS (WeWe RSS)
+  wewe-rss:
+    image: cooderl/wewe-rss-sqlite:latest
+    container_name: wewe-rss
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./data/wewe-rss:/app/data
+    environment:
+      # Mã PIN bảo vệ giao diện web của WeWe RSS (bạn có thể đổi mã này)
+      - AUTH_CODE=123456
+    restart: unless-stopped
+
+  # 2. Tool của chúng ta (WeChat OA Collector)
+  collector:
+    build: .
+    container_name: wechat-collector
+    ports:
+      - "8107:8107"
+    volumes:
+      - ./data/collector:/app/data
+    environment:
+      - WECHAT_COLLECTOR_HOST=0.0.0.0
+      - WECHAT_COLLECTOR_PORT=8107
+      - WECHAT_POLL_INTERVAL=600  # 10 phút check RSS 1 lần
+    restart: unless-stopped

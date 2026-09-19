@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="vi" data-theme="system">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WeChat OA Collector</title>
+  <style>
+    :root{color-scheme:light;--bg:#f3f5f1;--paper:#fff;--ink:#172019;--muted:#647067;--line:#dfe5df;--brand:#13764a;--brand-2:#dff5e7;--danger:#a33b31;--shadow:0 16px 45px rgba(21,45,29,.08)}
+    html[data-theme="dark"]{color-scheme:dark;--bg:#101512;--paper:#171e19;--ink:#edf3ee;--muted:#a4afa7;--line:#2b352e;--brand:#56c989;--brand-2:#193c28;--danger:#ff9187;--shadow:0 16px 45px rgba(0,0,0,.25)}
+    @media(prefers-color-scheme:dark){html[data-theme="system"]{color-scheme:dark;--bg:#101512;--paper:#171e19;--ink:#edf3ee;--muted:#a4afa7;--line:#2b352e;--brand:#56c989;--brand-2:#193c28;--danger:#ff9187;--shadow:0 16px 45px rgba(0,0,0,.25)}}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,"Segoe UI",Arial,sans-serif;transition:background .2s,color .2s}button,input,textarea{font:inherit}button,a,input,textarea{outline-offset:3px}.shell{max-width:1180px;margin:auto;padding:30px 24px 60px}header{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:36px}.brand{display:flex;align-items:center;gap:12px;font-weight:760}.mark{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:var(--brand);color:#fff;font-size:22px;box-shadow:var(--shadow)}.muted{color:var(--muted)}.small{font-size:12px}.theme{border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:8px 11px;border-radius:10px}.hero{display:grid;grid-template-columns:1.4fr .8fr;gap:22px;margin-bottom:22px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}h1{font-size:clamp(30px,5vw,54px);letter-spacing:-2.2px;line-height:1.03;margin:8px 0 16px;max-width:720px}h2{font-size:19px;margin:0 0 6px}p{margin:6px 0}.eyebrow{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--brand);font-weight:800}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}.stat{padding:14px;border-radius:13px;background:var(--bg);border:1px solid var(--line)}.stat strong{display:block;font-size:25px}.status-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 5px var(--brand-2);margin-right:8px}.steps{display:grid;gap:14px;margin-top:18px}.step{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start}.step b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--brand-2);color:var(--brand);font-size:12px}.forms{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px}label{display:block;font-size:12px;font-weight:700;margin:14px 0 6px}input,textarea{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:11px;padding:11px 12px}textarea{min-height:112px;resize:vertical}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:13px}.btn{border:0;border-radius:11px;padding:10px 15px;font-weight:700;background:var(--brand);color:#fff;cursor:pointer;transition:transform .16s,filter .16s}.btn:hover{transform:translateY(-1px);filter:brightness(1.06)}.btn.secondary{background:var(--bg);border:1px solid var(--line);color:var(--ink)}.btn.danger{background:var(--danger);color:#fff}.btn.sm{padding:6px 10px;font-size:12px;border-radius:8px}.result{min-height:20px;margin-top:12px;font-size:13px}.error{color:var(--danger)}.toolbar{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:16px}.toolbar input{width:min(360px,100%);margin-top:5px}.articles{display:grid;gap:12px}.article{display:grid;grid-template-columns:108px 1fr;gap:16px;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}.cover{width:108px;height:76px;border-radius:10px;object-fit:cover;background:var(--line)}.cover.empty{display:grid;place-items:center;color:var(--muted);font-size:24px}.article h3{margin:1px 0 5px;font-size:16px}.article h3 a{color:inherit;text-decoration:none}.article h3 a:hover{text-decoration:underline}.meta{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted)}.summary{font-size:13px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:7px}.empty-state{text-align:center;padding:38px 16px;color:var(--muted)}code{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 5px;overflow-wrap:anywhere}.footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}.feed-list{display:grid;gap:8px;margin-top:14px}.feed-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font-size:13px}.feed-item .feed-url{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.feed-item .feed-meta{font-size:11px;color:var(--muted);white-space:nowrap}.feed-item.inactive{opacity:.5}.poller-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:3px 8px;border-radius:6px;background:var(--brand-2);color:var(--brand);font-weight:700}@media(max-width:800px){.hero,.forms{grid-template-columns:1fr}.toolbar{align-items:stretch;flex-direction:column}.toolbar label{width:100%}.toolbar input{width:100%}}@media(max-width:520px){.shell{padding:20px 14px 42px}.panel{padding:18px;border-radius:15px}.stats{grid-template-columns:1fr}.article{grid-template-columns:1fr}.cover{width:100%;height:150px}h1{letter-spacing:-1.3px}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header><div class="brand"><span class="mark">微</span><span>WeChat OA Collector<br><span class="small muted">Local · không lưu mật khẩu WeChat</span></span></div><button class="theme" id="theme" type="button">Đổi giao diện</button></header>
+    <section class="hero">
+      <div class="panel"><div class="eyebrow">Collector cho Official Account</div><h1>Thu bài WeChat vào một kho dữ liệu kiểm chứng được.</h1><p class="muted">Nhận bài mới từ callback <code>publicMsg</code> hoặc nhập link bài để backfill. Mỗi bản ghi giữ nguyên URL nguồn.</p><div class="stats"><div class="stat"><strong id="article-count">—</strong><span class="muted small">bài viết</span></div><div class="stat"><strong id="account-count">—</strong><span class="muted small">tài khoản OA</span></div><div class="stat"><strong id="event-count">—</strong><span class="muted small">lần nhận dữ liệu</span></div></div></div>
+      <div class="panel"><h2><span class="status-dot"></span>Collector đang chạy</h2><p class="small muted" id="callback-url">Đang nạp callback URL…</p><div class="steps"><div class="step"><b>1</b><div><strong>WeChat Windows đăng nhập</strong><p class="small muted">Giữ phiên đăng nhập trong chính WeChat.</p></div></div><div class="step"><b>2</b><div><strong>Sidecar gửi publicMsg</strong><p class="small muted">Đăng ký callback localhost ở bên dưới.</p></div></div><div class="step"><b>3</b><div><strong>Collector chuẩn hóa</strong><p class="small muted">Lưu SQLite và xuất CSV UTF-8.</p></div></div></div></div>
+    </section>
+    <section class="forms">
+      <form class="panel" id="import-form"><h2>Nhập bài lịch sử</h2><p class="small muted">Trong WeChat, mở bài → chia sẻ/sao chép liên kết. Dán một hoặc nhiều link <code>mp.weixin.qq.com</code>.</p><label for="urls">Link bài WeChat</label><textarea id="urls" placeholder="https://mp.weixin.qq.com/s?..." required></textarea><div class="row"><button class="btn" type="submit">Nhập bài</button><span class="small muted">Tối đa 2 MB mỗi yêu cầu</span></div><div class="result" id="import-result" aria-live="polite"></div></form>
+      <form class="panel" id="sidecar-form"><h2>Kết nối sidecar</h2><p class="small muted">Dành cho sidecar tương thích <code>/api/syncurl</code>. Collector chỉ cho phép địa chỉ localhost.</p><label for="sidecar-url">Địa chỉ sidecar</label><input id="sidecar-url" value="http://127.0.0.1:8080" required><div class="row"><button class="btn" type="submit">Đăng ký publicMsg</button><button class="btn secondary" id="copy-callback" type="button">Chép callback URL</button></div><div class="result" id="sidecar-result" aria-live="polite"></div></form>
+    </section>
+    <section class="panel" style="margin-bottom:22px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div><h2>📡 Theo dõi RSS Feed</h2><p class="small muted">Thêm RSS/Atom feed của OA WeChat. Poller tự động kiểm tra bài mới định kỳ.</p></div>
+        <div style="display:flex;gap:8px;align-items:center"><span class="poller-badge" id="poller-status">⏳</span><button class="btn sm secondary" id="poll-now" type="button">Poll ngay</button></div>
+      </div>
+      <form id="feed-form" style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+        <input id="feed-url" placeholder="https://rsshub.app/wechat/... hoặc RSS feed URL" required style="flex:1;min-width:200px">
+        <input id="feed-name" placeholder="Tên (tuỳ chọn)" style="width:160px">
+        <button class="btn" type="submit">Thêm feed</button>
+      </form>
+      <div class="result" id="feed-result" aria-live="polite"></div>
+      <div class="feed-list" id="feed-list"></div>
+    </section>
+    <section class="panel"><div class="toolbar"><div><h2>Bài đã thu thập</h2><p class="small muted">Tìm theo tài khoản, tiêu đề, mô tả hoặc nội dung.</p></div><label>Tìm kiếm<input id="search" type="search" placeholder="榴莲产业网, giá sầu riêng…"></label><a class="btn secondary" href="/api/articles.csv">Xuất CSV</a></div><div class="articles" id="articles"><div class="empty-state">Đang nạp dữ liệu…</div></div></section>
+    <div class="footer">Dữ liệu nằm tại máy này. Lượt đọc/thích chỉ được lưu khi WeChat thực sự gửi trường tương ứng.</div>
+  </div>
+  <script>
+    const $=id=>document.getElementById(id);let callbackUrl='';let timer;
+    const esc=value=>String(value??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+    const api=async(url,options={})=>{const response=await fetch(url,{...options,headers:{'Content-Type':'application/json',...(options.headers||{})}});let data={};try{data=await response.json()}catch{}if(!response.ok)throw new Error(data.error||data.message||`HTTP ${response.status}`);return data};
+    async function loadStatus(){const data=await api('/api/status');$('article-count').textContent=data.counts.articles;$('account-count').textContent=data.counts.accounts;$('event-count').textContent=data.counts.events;callbackUrl=data.callback_url;$('callback-url').innerHTML='Callback: <code>'+esc(callbackUrl)+'</code>'}
+    function fmtDate(value){if(!value)return 'Chưa có ngày';const date=new Date(value);return Number.isNaN(date.valueOf())?value:new Intl.DateTimeFormat('vi-VN',{dateStyle:'medium',timeStyle:'short'}).format(date)}
+    async function loadArticles(){const q=encodeURIComponent($('search').value.trim());const data=await api('/api/articles?limit=100&q='+q);if(!data.items.length){$('articles').innerHTML='<div class="empty-state">Chưa có bài. Hãy dán link bài WeChat hoặc kết nối sidecar.</div>';return}$('articles').innerHTML=data.items.map(item=>`<article class="article">${item.cover_url?`<img class="cover" src="${esc(item.cover_url)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:'<div class="cover empty">微</div>'}<div><div class="meta"><span>${esc(item.account_name||'WeChat OA')}</span><span>${esc(fmtDate(item.published_at||item.received_at))}</span><span>${item.read_count==null?'Không có số đọc':esc(item.read_count)+' lượt đọc'}</span></div><h3><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.title||'Bài WeChat chưa đọc được tiêu đề')}</a></h3><div class="summary">${esc(item.summary||item.content_text||'Không có mô tả')}</div></div></article>`).join('')}
+    $('import-form').addEventListener('submit',async event=>{event.preventDefault();const out=$('import-result');out.className='result';out.textContent='Đang đọc bài từ WeChat…';try{const data=await api('/api/wechat/import',{method:'POST',body:JSON.stringify({urls:$('urls').value})});out.textContent=data.message;$('urls').value='';await Promise.all([loadStatus(),loadArticles()])}catch(error){out.className='result error';out.textContent=error.message}});
+    $('sidecar-form').addEventListener('submit',async event=>{event.preventDefault();const out=$('sidecar-result');out.className='result';out.textContent='Đang kết nối sidecar…';try{const data=await api('/api/sidecar/register',{method:'POST',body:JSON.stringify({base_url:$('sidecar-url').value})});out.textContent='Đã đăng ký: '+data.callback_url}catch(error){out.className='result error';out.textContent=error.message}});
+    $('copy-callback').addEventListener('click',async()=>{await navigator.clipboard.writeText(callbackUrl);$('sidecar-result').textContent='Đã chép callback URL.'});
+    $('search').addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(loadArticles,250)});
+    $('theme').addEventListener('click',()=>{const html=document.documentElement;const next=html.dataset.theme==='dark'?'light':html.dataset.theme==='light'?'system':'dark';html.dataset.theme=next;localStorage.setItem('wechat-theme',next);$('theme').textContent={dark:'Giao diện tối',light:'Giao diện sáng',system:'Theo hệ thống'}[next]});
+    const saved=localStorage.getItem('wechat-theme')||'system';document.documentElement.dataset.theme=saved;$('theme').textContent={dark:'Giao diện tối',light:'Giao diện sáng',system:'Theo hệ thống'}[saved];
+
+    // ── Feed management ──────────────────────────────────────────
+    async function loadFeeds(){
+      try{
+        const data=await api('/api/feeds');
+        const badge=$('poller-status');
+        if(data.poller&&data.poller.running){badge.textContent='⚡ Poller: mỗi '+(data.poller.interval/60|0)+' phút'}
+        else{badge.textContent='⏸ Poller tắt'}
+        const list=$('feed-list');
+        if(!data.feeds||!data.feeds.length){list.innerHTML='<div class="empty-state small">Chưa có feed nào. Thêm RSS URL ở trên.</div>';return}
+        list.innerHTML=data.feeds.map(f=>`<div class="feed-item${f.active?'':' inactive'}">
+          <span class="feed-url" title="${esc(f.url)}">${esc(f.name||f.url)}</span>
+          <span class="feed-meta">${f.article_count} bài${f.last_checked?' · '+fmtDate(f.last_checked):''}</span>
+          <button class="btn sm secondary" onclick="toggleFeed(${f.id},${f.active?0:1})">${f.active?'Tạm dừng':'Bật lại'}</button>
+          <button class="btn sm danger" onclick="deleteFeed(${f.id})">Xóa</button>
+        </div>`).join('')
+      }catch(e){console.error('loadFeeds',e)}
+    }
+    window.deleteFeed=async function(id){
+      if(!confirm('Xóa feed này?'))return;
+      try{await api('/api/feeds/delete',{method:'POST',body:JSON.stringify({id})});await loadFeeds()}
+      catch(e){$('feed-result').className='result error';$('feed-result').textContent=e.message}
+    };
+    window.toggleFeed=async function(id,active){
+      try{await api('/api/feeds/toggle',{method:'POST',body:JSON.stringify({id,active:!!active})});await loadFeeds()}
+      catch(e){$('feed-result').className='result error';$('feed-result').textContent=e.message}
+    };
+    $('feed-form').addEventListener('submit',async event=>{
+      event.preventDefault();const out=$('feed-result');out.className='result';out.textContent='Đang thêm…';
+      try{
+        const data=await api('/api/feeds',{method:'POST',body:JSON.stringify({url:$('feed-url').value,name:$('feed-name').value})});
+        out.textContent=data.message;$('feed-url').value='';$('feed-name').value='';await loadFeeds()
+      }catch(e){out.className='result error';out.textContent=e.message}
+    });
+    $('poll-now').addEventListener('click',async()=>{
+      const btn=$('poll-now');btn.disabled=true;btn.textContent='Đang poll…';
+      const out=$('feed-result');out.className='result';out.textContent='Đang poll tất cả feed…';
+      try{
+        const data=await api('/api/feeds/poll',{method:'POST',body:JSON.stringify({})});
+        out.textContent=data.message;await Promise.all([loadFeeds(),loadStatus(),loadArticles()])
+      }catch(e){out.className='result error';out.textContent=e.message}
+      finally{btn.disabled=false;btn.textContent='Poll ngay'}
+    });
+
+    Promise.all([loadStatus(),loadArticles(),loadFeeds()]).catch(error=>{$('articles').innerHTML='<div class="empty-state error">'+esc(error.message)+'</div>'});
+  </script>
+</body>
+</html>
+

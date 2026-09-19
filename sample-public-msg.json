@@ -1,0 +1,13 @@
+{
+  "wxid": "wxid_demo",
+  "total": 1,
+  "data": [
+    {
+      "Type": "49",
+      "StrTalker": "gh_demo_account",
+      "CreateTime": "1789750800",
+      "StrContent": "<msg><appmsg><title>2026-09-19 | Bản tin thị trường sầu riêng</title><des>Dữ liệu minh họa callback publicMsg</des><url>https://mp.weixin.qq.com/s?__biz=demo&amp;mid=1&amp;idx=1</url><thumburl>https://example.invalid/cover.jpg</thumburl><source>榴莲产业网</source></appmsg></msg>"
+    }
+  ]
+}
+
